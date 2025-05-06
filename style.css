@@ -1,64 +1,112 @@
 body {
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #0f0f2d, #1f1f5a);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-  }
-  
-  .container {
-    text-align: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-  }
-  
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0f2d, #1f1f5a);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+  padding: 10px;
+  overflow-x: hidden; /* Evita que o conteúdo saia para a direita */
+  box-sizing: border-box; /* Faz com que padding e border não causem overflow */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; /* Aplica box-sizing: border-box em todos os elementos */
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  max-width: 100%; /* Garante que o container não ultrapasse a tela */
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; /* Evita overflow horizontal */
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-shadow: 0 0 10px cyan;
+}
+
+.status {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.botao-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+}
+
+.ligar {
+  background: #00ffcc;
+  color: #001f1f;
+}
+
+.desligar {
+  background: #ff0066;
+  color: #fff;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 10px;
-    text-shadow: 0 0 10px cyan;
+    font-size: 2rem;
   }
-  
+
   .status {
-    font-size: 1.2rem;
-    margin-bottom: 30px;
+    font-size: 1rem;
   }
-  
+
   .botao-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+    gap: 10px;
   }
-  
+
   button {
-    padding: 15px 30px;
-    font-size: 1.5rem;
-    border: none;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+    padding: 10px 20px;
+    font-size: 1rem;
   }
-  
-  .ligar {
-    background: #00ffcc;
-    color: #001f1f;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
   }
-  
-  .desligar {
-    background: #ff0066;
-    color: #fff;
+
+  .status {
+    font-size: 0.9rem;
   }
-  
-  button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+
+  button {
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
-  
+}
