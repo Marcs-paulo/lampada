@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f2d, #1f1f5a);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px cyan;
+  }
+  
+  .status {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .botao-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  button {
+    padding: 15px 30px;
+    font-size: 1.5rem;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.2);
+  }
+  
+  .ligar {
+    background: #00ffcc;
+    color: #001f1f;
+  }
+  
+  .desligar {
+    background: #ff0066;
+    color: #fff;
+  }
+  
+  button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.6);
+  }
+  
