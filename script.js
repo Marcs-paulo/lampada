@@ -31,14 +31,20 @@ window.desligar = function () {
 onValue(luzRef, (snapshot) => {
   const estado = snapshot.val();
   const display = document.getElementById("estado");
+  const lampada = document.getElementById("lampada");
+
   if (estado === "ligado") {
     display.textContent = "Ligado 🔆";
     display.style.color = "cyan";
+    lampada.classList.add("ligada");
   } else if (estado === "desligado") {
     display.textContent = "Desligado 🌑";
     display.style.color = "red";
+    lampada.classList.remove("ligada");
   } else {
     display.textContent = "Desconhecido";
     display.style.color = "white";
+    lampada.classList.remove("ligada");
   }
 });
+
