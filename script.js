@@ -20,16 +20,17 @@ const luzRef = ref(database, "luz/status");
 
 // Funções para alterar o estado da luz
 window.ligar = function () {
+  atualizarEstadoVisual("ligado");     // Feedback imediato
   set(luzRef, "ligado");
 };
 
 window.desligar = function () {
+  atualizarEstadoVisual("desligado");  // Feedback imediato
   set(luzRef, "desligado");
 };
 
-// Atualiza visualmente o estado da luz
-onValue(luzRef, (snapshot) => {
-  const estado = snapshot.val();
+// Função para atualizar a interface visualmente
+function atualizarEstadoVisual(estado) {
   const display = document.getElementById("estado");
   const lampada = document.getElementById("lampada");
 
@@ -46,5 +47,10 @@ onValue(luzRef, (snapshot) => {
     display.style.color = "white";
     lampada.classList.remove("ligada");
   }
-});
+}
 
+// Mantém sincronização com o Firebase
+onValue(luzRef, (snapshot) => {
+  const estado = snapshot.val();
+  atualizarEstadoVisual(estado);
+});
